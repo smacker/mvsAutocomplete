@@ -36,8 +36,8 @@ angular.module('mvsAutocomplete', [])
         source: '='
       },
       link: function(scope, element, attrs) {
-        var valueGetter = $parse(attrs.valuePath),
-            labelGetter = $parse(attrs.labelPath),
+        var valueGetter = attrs.valuePath && $parse(attrs.valuePath),
+            labelGetter = attrs.labelPath && $parse(attrs.labelPath),
             modelGetter = (valueGetter && $parse('__obj')) || angular.identity,
             options = { // jQuery UI autocomplete options
               minLength: 0,
