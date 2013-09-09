@@ -5,7 +5,7 @@
  */
 
 angular.module('mvsAutocomplete', [])
-  .directive('mvsAutocomplete', function($parse){
+  .directive('mvsAutocomplete', ['$parse', function($parse) {
     // Transform source array to jQuery UI autocomplete source or return original source
     var getSource = function (source, valueGetter, labelGetter) {
       if (angular.isArray(source) && valueGetter) {
@@ -70,4 +70,4 @@ angular.module('mvsAutocomplete', [])
         }, true);
       }
     };
-  });
+  }]);
