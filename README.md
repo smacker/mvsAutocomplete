@@ -15,4 +15,4 @@ JQueryUI
 Demo
 ====
 
-Look on [JSFiddle](http://jsfiddle.net/smacker/JZZLH/)
+Look on [JSFiddle](http://jsfiddle.net/smacker/JZZLH/1/)
