@@ -61,13 +61,17 @@ angular.module('mvsAutocomplete', [])
         element.autocomplete(options);
 
         element.on('autocompleteselect', function (e, ui) {
-          ngModel.$setViewValue(modelGetter(ui.item));
+          scope.$apply(function () {
+            ngModel.$setViewValue(modelGetter(ui.item));
+          });
         });
 
         element.bind('keyup', function () {
           // set model to null when input is empty
           if (!element.val().length) {
-            ngModel.$setViewValue(null);
+            scope.$apply(function () {
+              ngModel.$setViewValue(null);
+            });
           }
         });
 
