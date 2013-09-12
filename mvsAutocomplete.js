@@ -35,9 +35,12 @@ angular.module('mvsAutocomplete', [])
       scope: false,
       require: '?ngModel',
       replace: true,
-      template: '<input type="text">',
+      template: '<input type="hidden">', // disable inputDirective side effect
       link: function(scope, element, attrs, ngModel) {
         if(!ngModel) return;
+
+        // set type to text
+        element.attr('type', 'text');
 
         var valueGetter = attrs.valuePath && $parse(attrs.valuePath),
             labelGetter = attrs.labelPath && $parse(attrs.labelPath),
